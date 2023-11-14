@@ -1,25 +1,13 @@
-package ex2;
-// Fig. 23.15: CircularBufferTest.java
-// Two threads manipulating a blocking buffer that properly
-// implements the producer/consumer relationship.
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.TimeUnit;
+package ex4;
 
-public class BlockingBufferTest {
-    public static void main(String[] args) throws InterruptedException {
-        // create new thread pool
-        ExecutorService executorService = Executors.newCachedThreadPool();
+// Fig. 23.9: Ex1.Buffer.java
+// Ex1.Buffer interface specifies methods called by Ex1.Producer and Ex1.Consumer.
+public interface Buffer {
+    // place int value into Ex1.Buffer
+    public void blockingPut(int value) throws InterruptedException;
 
-        // create SynchronizedBuffer to store ints
-        Buffer sharedLocation = new BlockingBuffer();
-
-        executorService.execute(new Producer(sharedLocation));
-        executorService.execute(new Consumer(sharedLocation));
-
-        executorService.shutdown();
-        executorService.awaitTermination(1, TimeUnit.MINUTES);
-    }
+    // return int value from Ex1.Buffer
+    public int blockingGet() throws InterruptedException;
 }
 
 

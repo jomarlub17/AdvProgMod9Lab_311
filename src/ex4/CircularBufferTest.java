@@ -1,4 +1,4 @@
-package ex3;
+package ex4;
 // Fig. 23.15: CircularBufferTest.java
 // Two threads manipulating a blocking buffer that properly
 // implements the producer/consumer relationship.
@@ -6,16 +6,16 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
-public class SharedBufferTest2 {
+public class CircularBufferTest {
     public static void main(String[] args) throws InterruptedException {
-        // create a newCachedThreadPool
+        // create new thread pool
         ExecutorService executorService = Executors.newCachedThreadPool();
 
-        // create SynchronizedBuffer to store ints
-        Buffer sharedLocation = new SynchronizedBuffer();
+        // create CircularBuffer to store ints
+        CircularBuffer sharedLocation = new CircularBuffer();
 
-        System.out.printf("%-40s%s\t\t%s%n%-40s%s%n%n", "Operation",
-                "Buffer", "Occupied", "---------", "------\t\t--------");
+        // display the initial state of the CircularBuffer
+        sharedLocation.displayState("Initial State");
 
         // execute the Producer and Consumer tasks
         executorService.execute(new Producer(sharedLocation));
@@ -25,6 +25,8 @@ public class SharedBufferTest2 {
         executorService.awaitTermination(1, TimeUnit.MINUTES);
     }
 }
+
+
 
 
 /**************************************************************************
