@@ -4,7 +4,7 @@
 
 **Team Members:**
 - [Alex] — TBD
-- [Jake] — TBD
+- [Jake] — CheckoutQueue
 - [Jomar] — TBD
 
 ---
