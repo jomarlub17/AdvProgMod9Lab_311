@@ -3,9 +3,9 @@
 ### Producer-Consumer Pattern Lab | Java Multithreading
 
 **Team Members:**
-- [Alex] — CheckoutQueue
-- [Jake] — Customer class
-- [Jomar] — Cashier class + CostcoSimulation (collaborative)
+- [Alex] — TBD
+- [Jake] — TBD
+- [Jomar] — TBD
 
 ---
 
