@@ -3,9 +3,9 @@
 ### Producer-Consumer Pattern Lab | Java Multithreading
 
 **Team Members:**
-- [Alex] — TBD
+- [Alex] — Cashier
 - [Jake] — CheckoutQueue
-- [Jomar] — TBD
+- [Jomar] — Customer
 
 ---
 
